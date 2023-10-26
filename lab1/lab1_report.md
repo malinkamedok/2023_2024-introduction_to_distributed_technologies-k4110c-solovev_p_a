@@ -79,4 +79,5 @@ minikube kubectl logs vault-5b56bbdcc8-27469
 ```
 
 ![drawio](pictures/kuber-lab1.drawio.png)
+
 Схема организации контейнеров и сервисов.

@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-frontend
+  labels:
+    app: frontend
+    owner: solovev
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  replicas: 2 
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: ifilyaninitmo/itdt-contained-frontend:master
+        ports:
+        - containerPort: 3000
+        env:
+        - name: REACT_APP_USERNAME
+          value: pavel
+        - name: REACT_APP_COMPANY_NAME
+          value: itmo
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-frontend
+  labels:
+    run: frontend
+spec:
+  ports:
+  - port: 3000
+    targetPort: 3000
+    protocol: TCP
+  selector:
+    app: frontend

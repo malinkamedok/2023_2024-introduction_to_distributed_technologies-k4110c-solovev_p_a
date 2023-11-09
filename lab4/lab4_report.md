@@ -6,7 +6,7 @@ Group: K4110c\
 Author: Solovev Pavel Alekseevich\
 Lab: Lab4\
 Date of create: 08.11.2023\
-Date of finished: --
+Date of finished: 09.11.2023
 
 ## Выполнение работы
 
